@@ -22,7 +22,7 @@ const request = async (url) => {
     `( ${i} ) try attack with name [==${header.responses[0].text}==]`
   );
 
-  axios
+  await axios
     .post(url, header)
     .then((response) => {
       if (response.data.status === 200)
@@ -34,7 +34,7 @@ const request = async (url) => {
       );
     })
     .catch((error) => {
-      console.log(error);
+      `connection error : [==attack=failed==]\n`;
     });
   i++;
 };
